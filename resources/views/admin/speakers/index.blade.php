@@ -3,7 +3,6 @@
 @section('title', 'Speakers')
 
 @section('content')
-@php($avatarAccents = ['navy', 'sky', 'orange', 'green'])
 <div class="d-flex justify-content-between align-items-center mb-3">
     <p class="text-muted mb-0">Manage speaker profiles shown on the homepage.</p>
     <a href="{{ route('admin.speakers.create') }}" class="btn btn-rmw-primary btn-sm"><i class="bi bi-plus-lg me-1"></i>Add Speaker</a>
@@ -17,7 +16,7 @@
                 @forelse($speakers as $i => $speaker)
                 <tr>
                     <td>
-                        <div class="badge-{{ $avatarAccents[$i % 4] }} rounded-circle d-flex align-items-center justify-content-center" style="width:40px;height:40px;">
+                        <div class="badge-sky rounded-circle d-flex align-items-center justify-content-center" style="width:40px;height:40px;">
                             <i class="bi bi-person-fill"></i>
                         </div>
                     </td>
