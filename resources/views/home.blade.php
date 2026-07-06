@@ -103,7 +103,6 @@
         <hr class="stripe-divider w-25 ms-0 mb-4">
         @php($speakerSlides = $speakers->chunk(4))
         @php($avatarAccents = ['navy', 'sky', 'orange', 'green'])
-        @php($initialsOf = fn($name) => collect(explode(' ', preg_replace('/^(Dr|Hon|Mr|Mrs|Ms)\.?\s*/i', '', $name)))->map(fn($p) => mb_substr($p, 0, 1))->take(2)->implode(''))
         <div id="speakerCarousel" class="carousel slide reveal" data-bs-ride="false">
             <div class="carousel-inner">
                 @foreach($speakerSlides as $slideIndex => $slide)
@@ -112,7 +111,7 @@
                         @foreach($slide as $i => $speaker)
                         <div class="col-6 col-md-3">
                             <div class="card-rmw h-100 text-center">
-                                <div class="speaker-avatar badge-{{ $avatarAccents[$i % 4] }}">{{ $initialsOf($speaker->name) }}</div>
+                                <div class="speaker-avatar badge-{{ $avatarAccents[$i % 4] }}"><i class="bi bi-person-fill"></i></div>
                                 <div class="p-3">
                                     <h6 class="fw-bold mb-0">{{ $speaker->name }}</h6>
                                     <p class="small text-muted mb-0">{{ $speaker->job_title }}</p>

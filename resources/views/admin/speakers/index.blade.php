@@ -4,7 +4,6 @@
 
 @section('content')
 @php($avatarAccents = ['navy', 'sky', 'orange', 'green'])
-@php($initialsOf = fn($name) => collect(explode(' ', preg_replace('/^(Dr|Hon|Mr|Mrs|Ms)\.?\s*/i', '', $name)))->map(fn($p) => mb_substr($p, 0, 1))->take(2)->implode(''))
 <div class="d-flex justify-content-between align-items-center mb-3">
     <p class="text-muted mb-0">Manage speaker profiles shown on the homepage.</p>
     <a href="{{ route('admin.speakers.create') }}" class="btn btn-rmw-primary btn-sm"><i class="bi bi-plus-lg me-1"></i>Add Speaker</a>
@@ -18,7 +17,9 @@
                 @forelse($speakers as $i => $speaker)
                 <tr>
                     <td>
-                        <div class="badge-{{ $avatarAccents[$i % 4] }} rounded-circle d-flex align-items-center justify-content-center fw-bold" style="width:40px;height:40px;font-size:.8rem;">{{ $initialsOf($speaker->name) }}</div>
+                        <div class="badge-{{ $avatarAccents[$i % 4] }} rounded-circle d-flex align-items-center justify-content-center" style="width:40px;height:40px;">
+                            <i class="bi bi-person-fill"></i>
+                        </div>
                     </td>
                     <td class="fw-semibold">{{ $speaker->name }}</td>
                     <td>{{ $speaker->job_title }}</td>
