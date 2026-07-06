@@ -5,12 +5,12 @@
 @section('content')
 
 <section class="hero-rmw">
-    <div class="hero-shape hero-shape-1">@include('partials.brand-mark-svg', ['size' => 220])</div>
-    <div class="hero-shape hero-shape-2">@include('partials.brand-mark-svg', ['size' => 110])</div>
+    <div class="hero-shape hero-shape-1">@include('partials.brand-mark-svg', ['size' => 560])</div>
+    <div class="hero-shape hero-shape-2">@include('partials.brand-mark-svg', ['size' => 90])</div>
     <div class="container">
         <span class="eyebrow">Dec 9–11, 2026 · Kigali Convention Centre</span>
         <h1 class="mt-3 mb-3">Rwanda Mining Week 2026</h1>
-        <p class="fs-5 col-lg-8" style="color: rgba(255,255,255,.85);">
+        <p class="fs-5 col-lg-6" style="color: rgba(255,255,255,.85);">
             Theme: <strong>"Extractive Industry for Sustainable Futures."</strong>
             Bringing together government, investors, operators and researchers to shape the future of
             Rwanda's mining, quarry, oil and gas sectors.
@@ -64,6 +64,7 @@
         <h2 class="section-title mb-2">A complete <span class="accent">extractive industry</span> platform</h2>
         <hr class="stripe-divider w-25 ms-0 mb-4">
         @php($accents = ['navy', 'sky', 'orange', 'green'])
+        @php($ruleColors = ['navy' => 'var(--rw-dark)', 'sky' => 'var(--rw-blue)', 'orange' => 'var(--rw-yellow)', 'green' => 'var(--rw-green)'])
         <div class="row g-4">
             @foreach([
                 ['bi-mic', 'Conference Sessions', 'Plenary and breakout sessions on policy, investment, and technology across the value chain.'],
@@ -75,8 +76,9 @@
             ] as $i => [$icon, $title, $desc])
             @php($accent = $accents[$i % 4])
             <div class="col-md-4">
-                <div class="card-rmw top-{{ $accent }} p-4 h-100 reveal" style="transition-delay: {{ $i * 70 }}ms">
-                    <i class="bi {{ $icon }} fs-2 mb-3 accent-{{ $accent }}"></i>
+                <div class="feature-flat reveal" style="transition-delay: {{ $i * 70 }}ms">
+                    <i class="bi {{ $icon }} fs-3 accent-{{ $accent }}"></i>
+                    <div class="rule" style="background: {{ $ruleColors[$accent] }}"></div>
                     <h5 class="fw-bold">{{ $title }}</h5>
                     <p class="text-muted small mb-0">{{ $desc }}</p>
                 </div>
@@ -85,6 +87,13 @@
         </div>
     </div>
 </section>
+
+<div class="pull-quote text-center reveal">
+    <div class="container">
+        <div class="quote-mark">&ldquo;</div>
+        <blockquote class="mb-0">Extractive Industry for Sustainable Futures.</blockquote>
+    </div>
+</div>
 
 @if($speakers->count())
 <section class="py-5 bg-white">
@@ -157,7 +166,7 @@
 </section>
 @endif
 
-<section class="py-5 text-white reveal" style="background: var(--rw-dark);">
+<section class="section-angled-top py-5 text-white reveal" style="background: var(--rw-dark);">
     <div class="container text-center">
         <h2 class="fw-bold mb-3">Secure your seat at Rwanda Mining Week 2026</h2>
         <p class="col-lg-6 mx-auto" style="color: rgba(255,255,255,.75);">Delegate, VIP and exhibitor packages available. Online registration and payment take minutes.</p>
