@@ -185,10 +185,28 @@ a { text-decoration: none; }
 .speaker-photo {
   width: 100%; aspect-ratio: 1/1; object-fit: cover; background:#eef3f3;
 }
-.badge-tier-platinum { background:#e2e6ef; color:#2c3654; }
+.badge-tier-platinum { background:#e2e6ef; color: var(--rw-dark); }
 .badge-tier-gold { background: var(--rw-yellow); color:#fff; }
-.badge-tier-silver { background:#dfe6ee; color:#33484a; }
+.badge-tier-silver { background:#dceaf4; color: #1a6f99; }
 .badge-tier-partner { background: #d7f2e2; color:#0b6b3d; }
+
+/* Color rotation — cycle the full brand palette across repeating grids/lists
+   instead of leaning on a single accent everywhere. */
+.accent-navy   { color: var(--rw-dark) !important; }
+.accent-sky    { color: var(--rw-blue) !important; }
+.accent-orange { color: var(--rw-yellow) !important; }
+.accent-green  { color: var(--rw-green) !important; }
+
+.card-rmw.top-navy   { border-top: 4px solid var(--rw-dark); }
+.card-rmw.top-sky    { border-top: 4px solid var(--rw-blue); }
+.card-rmw.top-orange { border-top: 4px solid var(--rw-yellow); }
+.card-rmw.top-green  { border-top: 4px solid var(--rw-green); }
+
+.badge-navy    { background: var(--rw-dark); color: #fff; }
+.badge-sky     { background: var(--rw-blue); color: #fff; }
+.badge-orange  { background: var(--rw-yellow); color: #fff; }
+.badge-green   { background: var(--rw-green); color: #fff; }
+.badge-neutral { background: #eef1f5; color: #4a5568; }
 
 .btn-rmw-primary {
   background: var(--rw-blue);

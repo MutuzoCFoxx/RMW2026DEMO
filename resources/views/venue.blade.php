@@ -38,22 +38,22 @@
 
         <div class="row g-4 mt-2">
             <div class="col-md-4">
-                <div class="card-rmw p-4 h-100">
-                    <i class="bi bi-airplane fs-3 mb-2" style="color:var(--rw-blue)"></i>
+                <div class="card-rmw top-sky p-4 h-100 reveal">
+                    <i class="bi bi-airplane fs-3 mb-2 accent-sky"></i>
                     <h6 class="fw-bold">Getting there</h6>
                     <p class="small text-muted mb-0">Kigali International Airport is approximately 15 minutes from the Convention Centre. Airport ushers and protocol support will be available for delegates.</p>
                 </div>
             </div>
             <div class="col-md-4">
-                <div class="card-rmw p-4 h-100">
-                    <i class="bi bi-building fs-3 mb-2" style="color:var(--rw-blue)"></i>
+                <div class="card-rmw top-orange p-4 h-100 reveal" style="transition-delay: 70ms">
+                    <i class="bi bi-building fs-3 mb-2 accent-orange"></i>
                     <h6 class="fw-bold">Accommodation</h6>
                     <p class="small text-muted mb-0">Preferred hotel partnerships near the venue will be shared with confirmed delegates and speakers ahead of the event.</p>
                 </div>
             </div>
             <div class="col-md-4">
-                <div class="card-rmw p-4 h-100">
-                    <i class="bi bi-shield-check fs-3 mb-2" style="color:var(--rw-blue)"></i>
+                <div class="card-rmw top-green p-4 h-100 reveal" style="transition-delay: 140ms">
+                    <i class="bi bi-shield-check fs-3 mb-2 accent-green"></i>
                     <h6 class="fw-bold">Security &amp; Access</h6>
                     <p class="small text-muted mb-0">QR-coded badges and dedicated accreditation counters manage secure access throughout the venue.</p>
                 </div>

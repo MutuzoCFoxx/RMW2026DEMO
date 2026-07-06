@@ -4,8 +4,8 @@
 
 @php
 $typeColors = [
-    'plenary' => 'primary', 'breakout' => 'info', 'exhibition' => 'success',
-    'networking' => 'warning', 'gala' => 'dark', 'site_visit' => 'secondary', 'break' => 'light',
+    'plenary' => 'navy', 'breakout' => 'sky', 'exhibition' => 'green',
+    'networking' => 'orange', 'gala' => 'navy', 'site_visit' => 'sky', 'break' => 'neutral',
 ];
 @endphp
 
@@ -31,7 +31,7 @@ $typeColors = [
                             <div class="card-rmw p-3">
                                 <div class="d-flex flex-wrap justify-content-between align-items-start gap-2">
                                     <div>
-                                        <span class="badge session-type-badge text-bg-{{ $typeColors[$session->session_type] ?? 'secondary' }}">{{ str_replace('_',' ', $session->session_type) }}</span>
+                                        <span class="badge session-type-badge badge-{{ $typeColors[$session->session_type] ?? 'neutral' }}">{{ str_replace('_',' ', $session->session_type) }}</span>
                                         <h5 class="fw-bold mt-2 mb-1">{{ $session->title }}</h5>
                                         @if($session->description)
                                             <p class="small text-muted mb-1">{{ $session->description }}</p>

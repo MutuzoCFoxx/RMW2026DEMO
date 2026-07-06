@@ -25,10 +25,10 @@
 <div class="hero-strip py-4">
     <div class="container">
         <div class="row text-center g-3">
-            <div class="col-6 col-md-3 stat"><b>700–1000</b><span class="small">Delegates &amp; Visitors</span></div>
-            <div class="col-6 col-md-3 stat"><b>{{ $exhibitorCount > 0 ? $exhibitorCount : '40+' }}</b><span class="small">Exhibitors</span></div>
-            <div class="col-6 col-md-3 stat"><b>3 Days</b><span class="small">Dec 9–11, 2026</span></div>
-            <div class="col-6 col-md-3 stat"><b>Kigali</b><span class="small">Convention Centre</span></div>
+            <div class="col-6 col-md-3 stat"><b class="accent-sky">700–1000</b><span class="small">Delegates &amp; Visitors</span></div>
+            <div class="col-6 col-md-3 stat"><b class="accent-orange">{{ $exhibitorCount > 0 ? $exhibitorCount : '40+' }}</b><span class="small">Exhibitors</span></div>
+            <div class="col-6 col-md-3 stat"><b class="accent-green">3 Days</b><span class="small">Dec 9–11, 2026</span></div>
+            <div class="col-6 col-md-3 stat"><b class="accent-sky">Kigali</b><span class="small">Convention Centre</span></div>
         </div>
     </div>
 </div>
@@ -38,6 +38,7 @@
         <p class="eyebrow-mini mb-2">What to expect</p>
         <h2 class="section-title mb-2">A complete <span class="accent">extractive industry</span> platform</h2>
         <hr class="stripe-divider w-25 ms-0 mb-4">
+        @php($accents = ['navy', 'sky', 'orange', 'green'])
         <div class="row g-4">
             @foreach([
                 ['bi-mic', 'Conference Sessions', 'Plenary and breakout sessions on policy, investment, and technology across the value chain.'],
@@ -47,9 +48,10 @@
                 ['bi-cup-hot', 'Networking &amp; Cocktail', 'Curated networking sessions and an opening cocktail reception.'],
                 ['bi-stars', 'Gala Dinner', 'A signature evening celebrating Rwanda\'s extractive industry achievements.'],
             ] as $i => [$icon, $title, $desc])
+            @php($accent = $accents[$i % 4])
             <div class="col-md-4">
-                <div class="card-rmw p-4 h-100 reveal" style="transition-delay: {{ $i * 70 }}ms">
-                    <i class="bi {{ $icon }} fs-2 mb-3" style="color:var(--rw-blue)"></i>
+                <div class="card-rmw top-{{ $accent }} p-4 h-100 reveal" style="transition-delay: {{ $i * 70 }}ms">
+                    <i class="bi {{ $icon }} fs-2 mb-3 accent-{{ $accent }}"></i>
                     <h5 class="fw-bold">{{ $title }}</h5>
                     <p class="text-muted small mb-0">{{ $desc }}</p>
                 </div>

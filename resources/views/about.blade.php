@@ -37,14 +37,15 @@
                     <blockquote class="mb-4">"Extractive Industry for Sustainable Futures"</blockquote>
                     <h6 class="fw-bold mb-2" style="color: var(--rw-dark);">Key Objectives</h6>
                     <div>
+                        @php($objAccents = ['navy', 'sky', 'orange', 'green'])
                         @foreach([
                             'Attract global investment into Rwanda\'s mining, quarry, oil and gas sectors',
                             'Promote responsible, transparent and sustainable resource development',
                             'Strengthen regional cooperation across the Great Lakes mining corridor',
                             'Advance geological research, innovation and technology transfer',
                             'Build local capacity and skills across the extractive value chain',
-                        ] as $objective)
-                            <div class="obj-list-item"><span class="arrow">&rarr;</span>{{ $objective }}</div>
+                        ] as $i => $objective)
+                            <div class="obj-list-item"><span class="arrow accent-{{ $objAccents[$i % 4] }}">&rarr;</span>{{ $objective }}</div>
                         @endforeach
                     </div>
                 </div>
@@ -58,15 +59,16 @@
                 Rwanda has positioned itself as a leading MICE (meetings, incentives, conferences and exhibitions)
                 destination in Africa, pairing world-class infrastructure with a fast-growing extractive sector.
             </p>
+            @php($bannerAccents = ['sky', 'orange', 'green', 'sky'])
             <div class="row g-4">
                 @foreach([
                     ['#1', 'MICE Destination in Africa', 'ICCA-ranked convention market'],
                     ['30 min', 'Airport to KCC', 'Kigali International Airport transfer time'],
                     ['Top 3', 'Ease of Doing Business in Africa', 'World Bank ranking'],
                     ['Safe & Stable', 'Business Climate', 'Consistently ranked across the region'],
-                ] as [$num, $label, $sub])
+                ] as $i => [$num, $label, $sub])
                 <div class="col-6 col-md-3">
-                    <div class="stat-num">{{ $num }}</div>
+                    <div class="stat-num accent-{{ $bannerAccents[$i % 4] }}">{{ $num }}</div>
                     <div class="stat-label">{{ $label }}</div>
                     <div class="stat-sub">{{ $sub }}</div>
                 </div>
@@ -79,11 +81,11 @@
                 <div class="card-rmw p-4 h-100 reveal">
                     <h5 class="fw-bold mb-3">Event Snapshot</h5>
                     <ul class="list-unstyled small mb-0">
-                        <li class="mb-2"><i class="bi bi-calendar-event me-2" style="color:var(--rw-blue)"></i><strong>Dates:</strong> December 9&ndash;11, 2026</li>
-                        <li class="mb-2"><i class="bi bi-geo-alt me-2" style="color:var(--rw-blue)"></i><strong>Venue:</strong> Kigali Convention Centre</li>
-                        <li class="mb-2"><i class="bi bi-people me-2" style="color:var(--rw-blue)"></i><strong>Attendance:</strong> 700&ndash;1000 delegates &amp; visitors, 40+ exhibitors</li>
-                        <li class="mb-2"><i class="bi bi-diagram-3 me-2" style="color:var(--rw-blue)"></i><strong>Organizer:</strong> Rwanda Mines, Petroleum and Gas Board (RMB)</li>
-                        <li class="mb-0"><i class="bi bi-briefcase me-2" style="color:var(--rw-blue)"></i><strong>PCO partner:</strong> Rwanda Convention Bureau (RCB)</li>
+                        <li class="mb-2"><i class="bi bi-calendar-event me-2 accent-sky"></i><strong>Dates:</strong> December 9&ndash;11, 2026</li>
+                        <li class="mb-2"><i class="bi bi-geo-alt me-2 accent-orange"></i><strong>Venue:</strong> Kigali Convention Centre</li>
+                        <li class="mb-2"><i class="bi bi-people me-2 accent-green"></i><strong>Attendance:</strong> 700&ndash;1000 delegates &amp; visitors, 40+ exhibitors</li>
+                        <li class="mb-2"><i class="bi bi-diagram-3 me-2 accent-navy"></i><strong>Organizer:</strong> Rwanda Mines, Petroleum and Gas Board (RMB)</li>
+                        <li class="mb-0"><i class="bi bi-briefcase me-2 accent-sky"></i><strong>PCO partner:</strong> Rwanda Convention Bureau (RCB)</li>
                     </ul>
                 </div>
             </div>
