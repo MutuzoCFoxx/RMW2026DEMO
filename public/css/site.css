@@ -7,7 +7,7 @@
 }
 
 body {
-  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
   color: #1b2b2e;
   background: #f7f9f9;
 }
@@ -113,7 +113,7 @@ a { text-decoration: none; }
 .hero-strip .stat b { color: var(--rw-blue); font-size: 1.4rem; display:block; }
 
 /* Sections */
-.section-title { font-weight: 800; color: var(--rw-dark); }
+.section-title { font-weight: 800; color: var(--rw-dark); font-size: clamp(1.6rem, 3vw, 2.35rem); line-height: 1.2; }
 .section-title .accent { color: var(--rw-blue); }
 .eyebrow-mini {
   color: var(--rw-yellow);
@@ -138,6 +138,50 @@ a { text-decoration: none; }
   background: #fff;
 }
 .card-rmw:hover { transform: translateY(-4px); box-shadow: 0 12px 24px rgba(0,0,0,.08); }
+.card-accent {
+  border-left: 4px solid var(--rw-yellow);
+  box-shadow: 0 2px 16px rgba(22,33,63,.06);
+}
+.card-accent blockquote {
+  border-left: 4px solid var(--rw-yellow);
+  padding-left: 1rem;
+  color: var(--rw-dark);
+  font-style: italic;
+  font-weight: 600;
+  line-height: 1.6;
+}
+.obj-list-item {
+  display: flex;
+  gap: .6rem;
+  align-items: flex-start;
+  padding: .55rem 0;
+  border-bottom: 1px solid #eef1f5;
+  font-size: .9rem;
+  color: #4a5568;
+}
+.obj-list-item:last-child { border-bottom: none; }
+.obj-list-item .arrow { color: var(--rw-yellow); font-weight: 700; flex-shrink: 0; }
+
+.stat-banner {
+  background: linear-gradient(135deg, var(--rw-dark), var(--rw-dark-2));
+  border-radius: 16px;
+  color: #fff;
+  padding: 3rem 2rem;
+}
+.stat-banner .stat-num { font-size: clamp(1.6rem, 3vw, 2rem); font-weight: 900; color: var(--rw-yellow); line-height: 1; }
+.stat-banner .stat-label { font-size: .85rem; font-weight: 600; margin: .3rem 0 .1rem; }
+.stat-banner .stat-sub { font-size: .72rem; color: rgba(255,255,255,.5); }
+
+.org-badge {
+  background: #fff;
+  border: 1px solid #e6ecec;
+  border-radius: 10px;
+  padding: .85rem 1.4rem;
+  font-size: .85rem;
+  font-weight: 600;
+  color: var(--rw-dark);
+}
+
 .speaker-photo {
   width: 100%; aspect-ratio: 1/1; object-fit: cover; background:#eef3f3;
 }
