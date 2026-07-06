@@ -3,6 +3,8 @@
 @section('title', 'Speakers')
 
 @section('content')
+@php($avatarAccents = ['navy', 'sky', 'orange', 'green'])
+@php($initialsOf = fn($name) => collect(explode(' ', preg_replace('/^(Dr|Hon|Mr|Mrs|Ms)\.?\s*/i', '', $name)))->map(fn($p) => mb_substr($p, 0, 1))->take(2)->implode(''))
 <div class="d-flex justify-content-between align-items-center mb-3">
     <p class="text-muted mb-0">Manage speaker profiles shown on the homepage.</p>
     <a href="{{ route('admin.speakers.create') }}" class="btn btn-rmw-primary btn-sm"><i class="bi bi-plus-lg me-1"></i>Add Speaker</a>
@@ -13,9 +15,11 @@
         <table class="table align-middle">
             <thead><tr><th></th><th>Name</th><th>Title</th><th>Organization</th><th>Keynote</th><th></th></tr></thead>
             <tbody>
-                @forelse($speakers as $speaker)
+                @forelse($speakers as $i => $speaker)
                 <tr>
-                    <td><img src="{{ $speaker->photo_url ?: 'https://api.dicebear.com/9.x/avataaars/svg?seed='.urlencode($speaker->name) }}" style="width:40px;height:40px;object-fit:cover;border-radius:50%;"></td>
+                    <td>
+                        <div class="badge-{{ $avatarAccents[$i % 4] }} rounded-circle d-flex align-items-center justify-content-center fw-bold" style="width:40px;height:40px;font-size:.8rem;">{{ $initialsOf($speaker->name) }}</div>
+                    </td>
                     <td class="fw-semibold">{{ $speaker->name }}</td>
                     <td>{{ $speaker->job_title }}</td>
                     <td>{{ $speaker->organization }}</td>

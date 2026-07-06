@@ -197,6 +197,17 @@ a { text-decoration: none; }
 .stat-banner .stat-label { font-size: .85rem; font-weight: 600; margin: .3rem 0 .1rem; }
 .stat-banner .stat-sub { font-size: .72rem; color: rgba(255,255,255,.5); }
 
+.speaker-avatar {
+  width: 100%;
+  aspect-ratio: 1/1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-weight: 800;
+  letter-spacing: .05em;
+}
+
 .org-badge {
   background: #fff;
   border: 1px solid #e6ecec;
@@ -207,9 +218,6 @@ a { text-decoration: none; }
   color: var(--rw-dark);
 }
 
-.speaker-photo {
-  width: 100%; aspect-ratio: 1/1; object-fit: cover; background:#eef3f3;
-}
 .badge-tier-platinum { background:#e2e6ef; color: var(--rw-dark); }
 .badge-tier-gold { background: var(--rw-yellow); color:#fff; }
 .badge-tier-silver { background:#dceaf4; color: #1a6f99; }
