@@ -53,12 +53,12 @@ class DatabaseSeeder extends Seeder
     private function seedSponsors(): void
     {
         $sponsors = [
-            ['name' => 'Bank of Kigali', 'tier' => 'platinum'],
-            ['name' => 'Rwanda Development Board', 'tier' => 'platinum'],
-            ['name' => 'MTN Rwanda', 'tier' => 'gold'],
-            ['name' => 'Equity Bank Rwanda', 'tier' => 'gold'],
-            ['name' => 'I&M Bank Rwanda', 'tier' => 'silver'],
-            ['name' => 'Rwanda Mining Association', 'tier' => 'partner'],
+            ['name' => 'Kivu Capital Holdings', 'tier' => 'platinum'],
+            ['name' => 'Continental Ore Bank', 'tier' => 'platinum'],
+            ['name' => 'Meridian Energy Partners', 'tier' => 'gold'],
+            ['name' => 'Highland Minerals Finance', 'tier' => 'gold'],
+            ['name' => 'Lakeside Trust Bank', 'tier' => 'silver'],
+            ['name' => 'Great Lakes Extractives Alliance', 'tier' => 'partner'],
         ];
 
         foreach ($sponsors as $i => $sponsor) {
