@@ -32,14 +32,14 @@ class DatabaseSeeder extends Seeder
     private function seedSpeakers(): void
     {
         $speakers = [
-            ['name' => 'Hon. Francis Gatare', 'job_title' => 'CEO', 'organization' => 'Rwanda Mines, Petroleum and Gas Board', 'country' => 'Rwanda', 'is_keynote' => true],
-            ['name' => 'Dr. Aline Uwase', 'job_title' => 'Director of Investment', 'organization' => 'Rwanda Development Board', 'country' => 'Rwanda', 'is_keynote' => true],
-            ['name' => 'James Okoro', 'job_title' => 'Regional Director', 'organization' => 'Africa Mining Investment Council', 'country' => 'Nigeria'],
-            ['name' => 'Sophie Mbeki', 'job_title' => 'Head of ESG', 'organization' => 'Continental Minerals Group', 'country' => 'South Africa'],
-            ['name' => 'Dr. Peter Nkurunziza', 'job_title' => 'Senior Geologist', 'organization' => 'University of Rwanda', 'country' => 'Rwanda'],
-            ['name' => 'Amara Chukwu', 'job_title' => 'Managing Partner', 'organization' => 'Extractive Capital Partners', 'country' => 'Ghana'],
-            ['name' => 'Elise Mukamana', 'job_title' => 'Sustainability Lead', 'organization' => 'Rwanda Mining Association', 'country' => 'Rwanda'],
-            ['name' => 'Robert Kagina', 'job_title' => 'VP Operations', 'organization' => 'Great Lakes Minerals Ltd', 'country' => 'DRC'],
+            ['name' => 'Dr. Emmanuel Bizimana', 'job_title' => 'CEO', 'organization' => 'National Extractives Authority', 'country' => 'Rwanda', 'is_keynote' => true],
+            ['name' => 'Grace Nyirahabimana', 'job_title' => 'Director of Investment', 'organization' => 'Great Lakes Investment Board', 'country' => 'Rwanda', 'is_keynote' => true],
+            ['name' => 'Kwame Asante', 'job_title' => 'Regional Director', 'organization' => 'Pan-African Mining Investment Council', 'country' => 'Ghana'],
+            ['name' => 'Naledi Dlamini', 'job_title' => 'Head of ESG', 'organization' => 'Continental Ore Holdings', 'country' => 'South Africa'],
+            ['name' => 'Dr. Jean-Baptiste Habimana', 'job_title' => 'Senior Geologist', 'organization' => 'Kigali Institute of Geosciences', 'country' => 'Rwanda'],
+            ['name' => 'Adaeze Okonkwo', 'job_title' => 'Managing Partner', 'organization' => 'Meridian Extractive Capital', 'country' => 'Nigeria'],
+            ['name' => 'Claudine Uwimana', 'job_title' => 'Sustainability Lead', 'organization' => 'Great Lakes Extractives Alliance', 'country' => 'Rwanda'],
+            ['name' => 'Patrice Kagabo', 'job_title' => 'VP Operations', 'organization' => 'Highland Minerals Group', 'country' => 'DRC'],
         ];
 
         foreach ($speakers as $i => $speaker) {
@@ -93,26 +93,26 @@ class DatabaseSeeder extends Seeder
 
         $sessions = [
             [$day1, '08:00', '09:00', 'Registration & Accreditation', 'break', 'Foyer 1A', null],
-            [$day1, '09:00', '10:00', 'Opening Ceremony', 'plenary', 'Auditorium', 'Hon. Francis Gatare'],
-            [$day1, '10:00', '11:00', 'Keynote: Extractive Industry for Sustainable Futures', 'plenary', 'Auditorium', 'Dr. Aline Uwase'],
+            [$day1, '09:00', '10:00', 'Opening Ceremony', 'plenary', 'Auditorium', 'Dr. Emmanuel Bizimana'],
+            [$day1, '10:00', '11:00', 'Keynote: Extractive Industry for Sustainable Futures', 'plenary', 'Auditorium', 'Grace Nyirahabimana'],
             [$day1, '11:00', '11:30', 'Networking Coffee Break', 'networking', 'Foyer 1A', null],
-            [$day1, '11:30', '13:00', 'Panel: Attracting Global Investment to Rwanda\'s Mining Sector', 'plenary', 'Auditorium', 'James Okoro'],
+            [$day1, '11:30', '13:00', 'Panel: Attracting Global Investment to Rwanda\'s Mining Sector', 'plenary', 'Auditorium', 'Kwame Asante'],
             [$day1, '13:00', '14:00', 'Lunch', 'break', 'MH Foyer', null],
             [$day1, '14:00', '17:00', 'Exhibition Hall Opens', 'exhibition', 'MH1, MH2, MH3 & MH4', null],
             [$day1, '18:00', '20:00', 'Welcome Cocktail Reception', 'networking', 'KCC Gardens', null],
 
-            [$day2, '09:00', '10:30', 'Breakout: ESG & Responsible Mining Practices', 'breakout', 'AD4', 'Sophie Mbeki'],
-            [$day2, '09:00', '10:30', 'Breakout: Geological Research & Innovation', 'breakout', 'AD5', 'Dr. Peter Nkurunziza'],
+            [$day2, '09:00', '10:30', 'Breakout: ESG & Responsible Mining Practices', 'breakout', 'AD4', 'Naledi Dlamini'],
+            [$day2, '09:00', '10:30', 'Breakout: Geological Research & Innovation', 'breakout', 'AD5', 'Dr. Jean-Baptiste Habimana'],
             [$day2, '10:30', '11:00', 'Coffee Break', 'networking', 'Foyer 1A', null],
             [$day2, '11:00', '13:00', 'B2B Meetings & C-Suite Sideline Discussions', 'breakout', 'AD6 – AD12', null],
             [$day2, '13:00', '14:00', 'Lunch', 'break', 'MH Foyer', null],
-            [$day2, '14:00', '15:30', 'Panel: Financing the Extractive Value Chain', 'plenary', 'Auditorium', 'Amara Chukwu'],
+            [$day2, '14:00', '15:30', 'Panel: Financing the Extractive Value Chain', 'plenary', 'Auditorium', 'Adaeze Okonkwo'],
             [$day2, '19:00', '22:00', 'Gala Dinner', 'gala', 'MH (between MH2 & MH3)', null],
 
-            [$day3, '09:00', '10:30', 'Panel: Regional Cooperation in the Great Lakes Mining Corridor', 'plenary', 'Auditorium', 'Robert Kagina'],
+            [$day3, '09:00', '10:30', 'Panel: Regional Cooperation in the Great Lakes Mining Corridor', 'plenary', 'Auditorium', 'Patrice Kagabo'],
             [$day3, '10:30', '11:00', 'Coffee Break', 'networking', 'Foyer 1A', null],
-            [$day3, '11:00', '12:30', 'Closing Panel & Way Forward', 'plenary', 'Auditorium', 'Elise Mukamana'],
-            [$day3, '12:30', '13:00', 'Closing Remarks', 'plenary', 'Auditorium', 'Hon. Francis Gatare'],
+            [$day3, '11:00', '12:30', 'Closing Panel & Way Forward', 'plenary', 'Auditorium', 'Claudine Uwimana'],
+            [$day3, '12:30', '13:00', 'Closing Remarks', 'plenary', 'Auditorium', 'Dr. Emmanuel Bizimana'],
             [$day3, '14:00', '17:00', 'Optional Site Visits to Mining Operations', 'site_visit', 'Off-site', null],
         ];
 
