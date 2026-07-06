@@ -10,7 +10,8 @@
 <body style="background: var(--rw-dark); min-height:100vh;" class="d-flex align-items-center">
 <div class="container" style="max-width:420px;">
     <div class="text-center mb-4">
-        <h3 class="text-white fw-bold">RMW<span class="text-warning">2026</span></h3>
+        <div class="d-flex justify-content-center mb-2">@include('partials.brand-mark-svg', ['size' => 44])</div>
+        <h3 class="text-white fw-bold">RMW<span class="text-brand-accent">2026</span></h3>
         <p class="text-white-50 small">Admin Console</p>
     </div>
     <div class="card-rmw p-4">

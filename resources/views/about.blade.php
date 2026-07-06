@@ -5,7 +5,7 @@
 @section('content')
 <section class="py-5" style="background: var(--rw-dark);">
     <div class="container text-white text-center py-4">
-        <p class="eyebrow-mini text-warning">2026 Theme</p>
+        <p class="eyebrow-mini">2026 Theme</p>
         <h1 class="fw-bold">"Extractive Industry for Sustainable Futures"</h1>
     </div>
 </section>

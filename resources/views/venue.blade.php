@@ -5,7 +5,7 @@
 @section('content')
 <section class="py-5" style="background: var(--rw-dark);">
     <div class="container text-white text-center py-4">
-        <p class="eyebrow-mini text-warning">Where it happens</p>
+        <p class="eyebrow-mini">Where it happens</p>
         <h1 class="fw-bold">Kigali Convention Centre</h1>
         <p style="color: rgba(255,255,255,.75);">KG 2 Roundabout, Kigali, Rwanda</p>
     </div>

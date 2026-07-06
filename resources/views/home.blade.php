@@ -5,6 +5,8 @@
 @section('content')
 
 <section class="hero-rmw">
+    <div class="hero-shape hero-shape-1">@include('partials.brand-mark-svg', ['size' => 220])</div>
+    <div class="hero-shape hero-shape-2">@include('partials.brand-mark-svg', ['size' => 110])</div>
     <div class="container">
         <span class="eyebrow">Dec 9–11, 2026 · Kigali Convention Centre</span>
         <h1 class="mt-3 mb-3">Rwanda Mining Week 2026</h1>
@@ -44,9 +46,9 @@
                 ['bi-signpost-split', 'Site Visits', 'Optional guided visits to mining operations across Rwanda.'],
                 ['bi-cup-hot', 'Networking &amp; Cocktail', 'Curated networking sessions and an opening cocktail reception.'],
                 ['bi-stars', 'Gala Dinner', 'A signature evening celebrating Rwanda\'s extractive industry achievements.'],
-            ] as [$icon, $title, $desc])
+            ] as $i => [$icon, $title, $desc])
             <div class="col-md-4">
-                <div class="card-rmw p-4 h-100">
+                <div class="card-rmw p-4 h-100 reveal" style="transition-delay: {{ $i * 70 }}ms">
                     <i class="bi {{ $icon }} fs-2 mb-3" style="color:var(--rw-blue)"></i>
                     <h5 class="fw-bold">{{ $title }}</h5>
                     <p class="text-muted small mb-0">{{ $desc }}</p>
@@ -64,10 +66,10 @@
         <h2 class="section-title mb-2">Featured <span class="accent">Speakers</span></h2>
         <hr class="stripe-divider w-25 ms-0 mb-4">
         <div class="row g-4">
-            @foreach($speakers as $speaker)
+            @foreach($speakers as $i => $speaker)
             <div class="col-6 col-md-3">
-                <div class="card-rmw h-100">
-                    <img src="{{ $speaker->photo_url ?: 'https://ui-avatars.com/api/?background=00A1DE&color=fff&size=256&name='.urlencode($speaker->name) }}" class="speaker-photo" alt="{{ $speaker->name }}">
+                <div class="card-rmw h-100 reveal" style="transition-delay: {{ $i * 60 }}ms">
+                    <img src="{{ $speaker->photo_url ?: 'https://ui-avatars.com/api/?background=2BA6DE&color=fff&size=256&name='.urlencode($speaker->name) }}" class="speaker-photo" alt="{{ $speaker->name }}">
                     <div class="p-3">
                         <h6 class="fw-bold mb-0">{{ $speaker->name }}</h6>
                         <p class="small text-muted mb-0">{{ $speaker->job_title }}</p>
@@ -91,9 +93,9 @@
         <div class="mb-4">
             <span class="badge badge-tier-{{ $tier }} text-uppercase mb-2">{{ $tier }}</span>
             <div class="row g-4 mt-1">
-                @foreach($group as $sponsor)
+                @foreach($group as $i => $sponsor)
                 <div class="col-6 col-md-3">
-                    <a href="{{ $sponsor->website_url ?: '#' }}" class="card-rmw d-flex align-items-center justify-content-center p-4 text-decoration-none" style="height:110px;">
+                    <a href="{{ $sponsor->website_url ?: '#' }}" class="card-rmw d-flex align-items-center justify-content-center p-4 text-decoration-none reveal" style="height:110px; transition-delay: {{ $i * 60 }}ms">
                         @if($sponsor->logo_url)
                             <img src="{{ $sponsor->logo_url }}" alt="{{ $sponsor->name }}" style="max-height:60px; max-width:100%;">
                         @else
@@ -109,7 +111,7 @@
 </section>
 @endif
 
-<section class="py-5 text-white" style="background: var(--rw-dark);">
+<section class="py-5 text-white reveal" style="background: var(--rw-dark);">
     <div class="container text-center">
         <h2 class="fw-bold mb-3">Secure your seat at Rwanda Mining Week 2026</h2>
         <p class="col-lg-6 mx-auto" style="color: rgba(255,255,255,.75);">Delegate, VIP and exhibitor packages available. Online registration and payment take minutes.</p>

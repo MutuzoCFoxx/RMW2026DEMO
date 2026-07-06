@@ -12,7 +12,7 @@ $typeColors = [
 @section('content')
 <section class="py-5" style="background: var(--rw-dark);">
     <div class="container text-white text-center py-4">
-        <p class="eyebrow-mini text-warning">December 9&ndash;11, 2026</p>
+        <p class="eyebrow-mini">December 9&ndash;11, 2026</p>
         <h1 class="fw-bold">Event Program</h1>
     </div>
 </section>

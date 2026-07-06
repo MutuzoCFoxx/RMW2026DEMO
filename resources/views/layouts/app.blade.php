@@ -13,7 +13,10 @@
 
 <nav class="navbar navbar-expand-lg navbar-rmw py-3 sticky-top">
     <div class="container">
-        <a class="navbar-brand" href="{{ route('home') }}">RMW<span>2026</span></a>
+        <a class="navbar-brand brand-mark" href="{{ route('home') }}">
+            @include('partials.brand-mark-svg', ['size' => 34])
+            RMW<span>2026</span>
+        </a>
         <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#nav"><span class="navbar-toggler-icon"></span></button>
         <div class="collapse navbar-collapse" id="nav">
             <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
@@ -33,7 +36,7 @@
     <div class="container">
         <div class="row g-4">
             <div class="col-md-4">
-                <h5 class="text-white fw-bold">Rwanda Mining Week <span class="text-warning">2026</span></h5>
+                <h5 class="text-white fw-bold">Rwanda Mining Week <span class="text-brand-accent">2026</span></h5>
                 <p class="small">Extractive Industry for Sustainable Futures.<br>December 9–11, 2026 · Kigali Convention Centre, Rwanda.</p>
             </div>
             <div class="col-md-2">
@@ -62,6 +65,38 @@
     </div>
 </footer>
 
+<button type="button" class="back-to-top" id="backToTop" aria-label="Back to top">
+    <i class="bi bi-arrow-up"></i>
+</button>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var revealTargets = document.querySelectorAll('.reveal');
+        if ('IntersectionObserver' in window && revealTargets.length) {
+            var observer = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.15 });
+            revealTargets.forEach(function (el) { observer.observe(el); });
+        } else {
+            revealTargets.forEach(function (el) { el.classList.add('is-visible'); });
+        }
+
+        var backToTop = document.getElementById('backToTop');
+        if (backToTop) {
+            window.addEventListener('scroll', function () {
+                backToTop.classList.toggle('is-visible', window.scrollY > 400);
+            });
+            backToTop.addEventListener('click', function () {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        }
+    });
+</script>
 </body>
 </html>

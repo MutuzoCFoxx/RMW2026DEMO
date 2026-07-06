@@ -5,7 +5,7 @@
 @section('content')
 <section class="py-5" style="background: var(--rw-dark);">
     <div class="container text-white text-center py-4">
-        <p class="eyebrow-mini text-warning">Join us</p>
+        <p class="eyebrow-mini">Join us</p>
         <h1 class="fw-bold">Register for Rwanda Mining Week 2026</h1>
     </div>
 </section>

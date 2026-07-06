@@ -11,7 +11,10 @@
 <body>
 <div class="d-flex">
     <aside class="admin-sidebar p-3" style="width:250px; flex-shrink:0;">
-        <a href="{{ route('admin.dashboard') }}" class="d-block text-white fw-bold fs-5 mb-4 text-decoration-none">RMW<span class="text-warning">2026</span> Admin</a>
+        <a href="{{ route('admin.dashboard') }}" class="brand-mark text-white fw-bold fs-5 mb-4 text-decoration-none">
+            @include('partials.brand-mark-svg', ['size' => 28])
+            RMW<span class="text-brand-accent">2026</span> Admin
+        </a>
         <nav class="nav flex-column gap-1">
             <a class="nav-link {{ request()->routeIs('admin.dashboard') ? 'active' : '' }}" href="{{ route('admin.dashboard') }}"><i class="bi bi-speedometer2 me-2"></i>Dashboard</a>
             <a class="nav-link {{ request()->routeIs('admin.registrations.*') ? 'active' : '' }}" href="{{ route('admin.registrations.index') }}"><i class="bi bi-person-lines-fill me-2"></i>Registrations</a>
