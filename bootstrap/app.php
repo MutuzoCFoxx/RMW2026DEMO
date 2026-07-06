@@ -15,6 +15,11 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware) {
+        // Render (like most PaaS providers) terminates TLS at its edge proxy
+        // and forwards plain HTTP internally. Without trusting that proxy,
+        // Laravel generates all asset()/route() URLs as http://, which
+        // browsers then block as mixed content on an https:// page.
+        $middleware->trustProxies(at: '*');
         $middleware->redirectGuestsTo(fn () => route('admin.login'));
     })
     ->withExceptions(function (Exceptions $exceptions) {
