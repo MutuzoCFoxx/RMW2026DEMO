@@ -66,7 +66,7 @@
             </div>
         </div>
         <hr class="border-secondary my-4">
-        <p class="small mb-0 text-center">&copy; {{ date('Y') }} Rwanda Mining Week. Demo build prepared for tender submission RCB/004/6/2026.</p>
+        <p class="small mb-0 text-center">&copy; {{ date('Y') }} Planet Events Group. Demo build prepared for tender submission RCB/004/6/2026.</p>
     </div>
 </footer>
 
