@@ -53,12 +53,13 @@
                     </div>
                 </div>
 
+                @php($selectAccents = ['navy', 'sky', 'orange', 'green'])
                 <h5 class="fw-bold mt-4 mb-3">Delegate type</h5>
                 <div class="row g-2">
                     @foreach(['delegate' => 'Delegate', 'exhibitor' => 'Exhibitor', 'speaker' => 'Speaker', 'media' => 'Media', 'vip' => 'VIP'] as $value => $label)
                     <div class="col-6 col-md-4">
                         <input type="radio" class="btn-check" name="delegate_type" id="dt_{{ $value }}" value="{{ $value }}" {{ old('delegate_type') === $value ? 'checked' : ($value === 'delegate' && !old('delegate_type') ? 'checked' : '') }} required>
-                        <label class="btn btn-outline-secondary w-100" for="dt_{{ $value }}">{{ $label }}</label>
+                        <label class="btn btn-select btn-select-{{ $selectAccents[$loop->index % 4] }} w-100" for="dt_{{ $value }}">{{ $label }}</label>
                     </div>
                     @endforeach
                 </div>
@@ -68,7 +69,7 @@
                     @foreach($prices as $value => $price)
                     <div class="col-6 col-md-3">
                         <input type="radio" class="btn-check" name="ticket_type" id="tt_{{ $value }}" value="{{ $value }}" {{ old('ticket_type') === $value ? 'checked' : ($value === 'standard' && !old('ticket_type') ? 'checked' : '') }} required>
-                        <label class="btn btn-outline-primary w-100 h-100 py-3" for="tt_{{ $value }}">
+                        <label class="btn btn-select btn-select-{{ $selectAccents[$loop->index % 4] }} w-100 h-100 py-3" for="tt_{{ $value }}">
                             <span class="d-block fw-bold text-capitalize">{{ str_replace('_', ' ', $value) }}</span>
                             <span class="d-block small">{{ $price > 0 ? number_format($price).' RWF' : 'Free' }}</span>
                         </label>

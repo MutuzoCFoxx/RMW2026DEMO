@@ -37,7 +37,8 @@
 @yield('content')
 
 <footer class="footer-rmw pt-5 pb-4 mt-5">
-    <div class="container">
+    <hr class="stripe-divider w-100 m-0 rounded-0" style="height:5px;">
+    <div class="container mt-5">
         <div class="row g-4">
             <div class="col-md-4">
                 <h5 class="text-white fw-bold">Rwanda Mining Week <span class="text-brand-accent">2026</span></h5>

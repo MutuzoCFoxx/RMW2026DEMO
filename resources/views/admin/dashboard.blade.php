@@ -5,17 +5,17 @@
 @section('content')
 <div class="row g-3 mb-4">
     @foreach([
-        ['bi-person-lines-fill', 'Registrations', $stats['registrations']],
-        ['bi-check-circle', 'Paid', $stats['paid_registrations']],
-        ['bi-cash-stack', 'Revenue (RWF)', number_format($stats['revenue'])],
-        ['bi-mic', 'Speakers', $stats['speakers']],
-        ['bi-award', 'Sponsors', $stats['sponsors']],
-        ['bi-shop', 'Exhibitors', $stats['exhibitors']],
-    ] as [$icon, $label, $value])
+        ['bi-person-lines-fill', 'Registrations', $stats['registrations'], 'navy'],
+        ['bi-check-circle', 'Paid', $stats['paid_registrations'], 'green'],
+        ['bi-cash-stack', 'Revenue (RWF)', number_format($stats['revenue']), 'orange'],
+        ['bi-mic', 'Speakers', $stats['speakers'], 'sky'],
+        ['bi-award', 'Sponsors', $stats['sponsors'], 'orange'],
+        ['bi-shop', 'Exhibitors', $stats['exhibitors'], 'sky'],
+    ] as [$icon, $label, $value, $accent])
     <div class="col-6 col-md-4 col-lg-2">
-        <div class="stat-card p-3 bg-white h-100">
-            <i class="bi {{ $icon }} fs-4" style="color:var(--rw-blue)"></i>
-            <b class="d-block mt-2">{{ $value }}</b>
+        <div class="stat-card top-{{ $accent }} p-3 bg-white h-100">
+            <i class="bi {{ $icon }} fs-4 accent-{{ $accent }}"></i>
+            <b class="d-block mt-2 accent-{{ $accent }}">{{ $value }}</b>
             <span class="text-muted small">{{ $label }}</span>
         </div>
     </div>

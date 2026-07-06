@@ -58,7 +58,7 @@
     </div>
 </section>
 
-<section class="py-5">
+<section class="py-5 bg-tint-sky">
     <div class="container">
         <p class="eyebrow-mini mb-2">What to expect</p>
         <h2 class="section-title mb-2">A complete <span class="accent">extractive industry</span> platform</h2>
@@ -139,7 +139,7 @@
 @endif
 
 @if($sponsors->count())
-<section class="py-5">
+<section class="py-5 bg-tint-orange">
     <div class="container">
         <p class="eyebrow-mini mb-2">Backed by</p>
         <h2 class="section-title mb-2">Sponsors &amp; <span class="accent">Partners</span></h2>

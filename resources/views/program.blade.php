@@ -7,6 +7,10 @@ $typeColors = [
     'plenary' => 'navy', 'breakout' => 'sky', 'exhibition' => 'green',
     'networking' => 'orange', 'gala' => 'navy', 'site_visit' => 'sky', 'break' => 'neutral',
 ];
+$dotColors = [
+    'navy' => 'var(--rw-dark)', 'sky' => 'var(--rw-blue)', 'orange' => 'var(--rw-yellow)',
+    'green' => 'var(--rw-green)', 'neutral' => '#c3cad6',
+];
 @endphp
 
 @section('content')
@@ -27,7 +31,8 @@ $typeColors = [
                 </h3>
                 <div class="timeline-day">
                     @foreach($daySessions as $session)
-                        <div class="timeline-item">
+                        @php($dotColor = $dotColors[$typeColors[$session->session_type] ?? 'neutral'] ?? '#c3cad6')
+                        <div class="timeline-item" style="--dot-color: {{ $dotColor }}">
                             <div class="card-rmw p-3">
                                 <div class="d-flex flex-wrap justify-content-between align-items-start gap-2">
                                     <div>

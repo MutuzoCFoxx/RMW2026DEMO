@@ -222,16 +222,40 @@ a { text-decoration: none; }
 .accent-orange { color: var(--rw-yellow) !important; }
 .accent-green  { color: var(--rw-green) !important; }
 
-.card-rmw.top-navy   { border-top: 4px solid var(--rw-dark); }
-.card-rmw.top-sky    { border-top: 4px solid var(--rw-blue); }
-.card-rmw.top-orange { border-top: 4px solid var(--rw-yellow); }
-.card-rmw.top-green  { border-top: 4px solid var(--rw-green); }
+.top-navy   { border-top: 4px solid var(--rw-dark) !important; }
+.top-sky    { border-top: 4px solid var(--rw-blue) !important; }
+.top-orange { border-top: 4px solid var(--rw-yellow) !important; }
+.top-green  { border-top: 4px solid var(--rw-green) !important; }
 
 .badge-navy    { background: var(--rw-dark); color: #fff; }
 .badge-sky     { background: var(--rw-blue); color: #fff; }
 .badge-orange  { background: var(--rw-yellow); color: #fff; }
 .badge-green   { background: var(--rw-green); color: #fff; }
 .badge-neutral { background: #eef1f5; color: #4a5568; }
+
+/* Soft section-background tints — used sparingly to break up plain
+   white/gray section stacking without turning the page into a
+   rainbow. */
+.bg-tint-navy   { background: #eef0f6; }
+.bg-tint-sky    { background: #eaf6fc; }
+.bg-tint-orange { background: #fdf1e6; }
+.bg-tint-green  { background: #eaf8ee; }
+
+.btn-select {
+  border: 2px solid #e2e6ef;
+  color: var(--rw-dark);
+  background: #fff;
+  font-weight: 600;
+  transition: all .15s ease;
+}
+.btn-select-navy:hover   { border-color: var(--rw-dark); }
+.btn-select-sky:hover    { border-color: var(--rw-blue); }
+.btn-select-orange:hover { border-color: var(--rw-yellow); }
+.btn-select-green:hover  { border-color: var(--rw-green); }
+.btn-check:checked + .btn-select-navy   { background: var(--rw-dark);   border-color: var(--rw-dark);   color: #fff; }
+.btn-check:checked + .btn-select-sky    { background: var(--rw-blue);   border-color: var(--rw-blue);   color: #fff; }
+.btn-check:checked + .btn-select-orange { background: var(--rw-yellow); border-color: var(--rw-yellow); color: #fff; }
+.btn-check:checked + .btn-select-green  { background: var(--rw-green);  border-color: var(--rw-green);  color: #fff; }
 
 .btn-rmw-primary {
   background: var(--rw-blue);
@@ -305,9 +329,11 @@ a { text-decoration: none; }
   top: .35rem;
   width: 12px; height: 12px;
   border-radius: 50%;
-  background: var(--rw-yellow);
+  background: var(--dot-color, var(--rw-yellow));
   border: 2px solid var(--rw-dark-2);
 }
+.timeline-item { border-left: 3px solid transparent; }
+.timeline-item .card-rmw { border-left: 3px solid var(--dot-color, var(--rw-yellow)); }
 .session-type-badge { font-size:.72rem; font-weight:700; letter-spacing:.4px; text-transform:uppercase; }
 
 /* Back to top */
