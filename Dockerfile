@@ -14,10 +14,11 @@ RUN composer install --no-dev --no-interaction --no-scripts --prefer-dist --opti
 
 COPY . .
 
-RUN composer dump-autoload --optimize \
-    && mkdir -p database storage/framework/{cache,sessions,views} storage/logs bootstrap/cache \
+RUN mkdir -p database storage/framework/cache storage/framework/sessions storage/framework/views storage/logs bootstrap/cache \
     && touch database/database.sqlite \
     && chmod -R 775 storage bootstrap/cache database
+
+RUN composer dump-autoload --optimize
 
 COPY docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
 RUN chmod +x /usr/local/bin/docker-entrypoint.sh
