@@ -27,6 +27,7 @@
                 <li class="nav-item"><a class="nav-link {{ request()->routeIs('about') ? 'active' : '' }}" href="{{ route('about') }}">Theme &amp; About</a></li>
                 <li class="nav-item"><a class="nav-link {{ request()->routeIs('program') ? 'active' : '' }}" href="{{ route('program') }}">Program</a></li>
                 <li class="nav-item"><a class="nav-link {{ request()->routeIs('venue') ? 'active' : '' }}" href="{{ route('venue') }}">Venue</a></li>
+                <li class="nav-item ms-lg-2"><a class="btn btn-nav-outline" href="mailto:info@rwandaminingweek.rw?subject=Sponsorship%20%26%20Exhibition%20Enquiry">Exhibit &amp; Sponsor</a></li>
                 <li class="nav-item ms-lg-2"><a class="btn btn-cta" href="{{ route('registration.create') }}">Register Now</a></li>
             </ul>
         </div>

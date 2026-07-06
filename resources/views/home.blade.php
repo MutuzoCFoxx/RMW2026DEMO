@@ -18,6 +18,7 @@
         <div class="d-flex flex-wrap gap-3 mt-4">
             <a href="{{ route('registration.create') }}" class="btn btn-cta btn-lg">Register Now</a>
             <a href="{{ route('program') }}" class="btn btn-outline-light btn-lg">View Program</a>
+            <a href="mailto:info@rwandaminingweek.rw?subject=Sponsorship%20%26%20Exhibition%20Enquiry" class="btn btn-outline-light btn-lg">Exhibit &amp; Sponsor</a>
         </div>
     </div>
 </section>
@@ -32,6 +33,30 @@
         </div>
     </div>
 </div>
+
+<section class="py-5 bg-white">
+    <div class="container">
+        <p class="eyebrow-mini mb-2">Who it's for</p>
+        <h2 class="section-title mb-2">Built for every seat at the table</h2>
+        <hr class="stripe-divider w-25 ms-0 mb-4">
+        <div class="row g-4">
+            @foreach([
+                ['navy', 'bi-person-badge', 'Delegates', 'Policymakers, operators, researchers and financiers looking to engage directly with Rwanda\'s extractive sector.', route('registration.create'), 'Register as a delegate'],
+                ['orange', 'bi-shop-window', 'Exhibitors', 'Equipment, technology and service providers showcasing to a targeted regional buying audience.', route('registration.create'), 'Book an exhibition package'],
+                ['green', 'bi-graph-up-arrow', 'Investors & Partners', 'Financiers and strategic partners exploring investment and sponsorship opportunities.', 'mailto:info@rwandaminingweek.rw?subject=Sponsorship%20%26%20Exhibition%20Enquiry', 'Talk to the team'],
+            ] as $i => [$accent, $icon, $title, $desc, $href, $cta])
+            <div class="col-md-4">
+                <div class="card-rmw top-{{ $accent }} p-4 h-100 reveal" style="transition-delay: {{ $i * 80 }}ms">
+                    <i class="bi {{ $icon }} fs-2 mb-3 accent-{{ $accent }}"></i>
+                    <h5 class="fw-bold">{{ $title }}</h5>
+                    <p class="text-muted small mb-3">{{ $desc }}</p>
+                    <a href="{{ $href }}" class="fw-bold small accent-{{ $accent }}">{{ $cta }} &rarr;</a>
+                </div>
+            </div>
+            @endforeach
+        </div>
+    </div>
+</section>
 
 <section class="py-5">
     <div class="container">
@@ -67,19 +92,38 @@
         <p class="eyebrow-mini mb-2">Who's speaking</p>
         <h2 class="section-title mb-2">Featured <span class="accent">Speakers</span></h2>
         <hr class="stripe-divider w-25 ms-0 mb-4">
-        <div class="row g-4">
-            @foreach($speakers as $i => $speaker)
-            <div class="col-6 col-md-3">
-                <div class="card-rmw h-100 reveal" style="transition-delay: {{ $i * 60 }}ms">
-                    <img src="{{ $speaker->photo_url ?: 'https://ui-avatars.com/api/?background=2BA6DE&color=fff&size=256&name='.urlencode($speaker->name) }}" class="speaker-photo" alt="{{ $speaker->name }}">
-                    <div class="p-3">
-                        <h6 class="fw-bold mb-0">{{ $speaker->name }}</h6>
-                        <p class="small text-muted mb-0">{{ $speaker->job_title }}</p>
-                        <p class="small text-muted">{{ $speaker->organization }}</p>
+        @php($speakerSlides = $speakers->chunk(4))
+        <div id="speakerCarousel" class="carousel slide reveal" data-bs-ride="false">
+            <div class="carousel-inner">
+                @foreach($speakerSlides as $slideIndex => $slide)
+                <div class="carousel-item @if($slideIndex === 0) active @endif">
+                    <div class="row g-4">
+                        @foreach($slide as $speaker)
+                        <div class="col-6 col-md-3">
+                            <div class="card-rmw h-100">
+                                <img src="{{ $speaker->photo_url ?: 'https://ui-avatars.com/api/?background=2BA6DE&color=fff&size=256&name='.urlencode($speaker->name) }}" class="speaker-photo" alt="{{ $speaker->name }}">
+                                <div class="p-3">
+                                    <h6 class="fw-bold mb-0">{{ $speaker->name }}</h6>
+                                    <p class="small text-muted mb-0">{{ $speaker->job_title }}</p>
+                                    <p class="small text-muted">{{ $speaker->organization }}</p>
+                                </div>
+                            </div>
+                        </div>
+                        @endforeach
                     </div>
                 </div>
+                @endforeach
             </div>
-            @endforeach
+            @if($speakerSlides->count() > 1)
+            <div class="d-flex justify-content-center gap-3 mt-4">
+                <button class="carousel-control-prev position-static bg-dark rounded-circle p-2" type="button" data-bs-target="#speakerCarousel" data-bs-slide="prev" style="width:40px;height:40px;">
+                    <span class="carousel-control-prev-icon" aria-hidden="true" style="width:1rem;height:1rem;"></span>
+                </button>
+                <button class="carousel-control-next position-static bg-dark rounded-circle p-2" type="button" data-bs-target="#speakerCarousel" data-bs-slide="next" style="width:40px;height:40px;">
+                    <span class="carousel-control-next-icon" aria-hidden="true" style="width:1rem;height:1rem;"></span>
+                </button>
+            </div>
+            @endif
         </div>
     </div>
 </section>
