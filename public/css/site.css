@@ -1,0 +1,150 @@
+:root {
+  --rw-blue: #00A1DE;
+  --rw-yellow: #FAD201;
+  --rw-green: #00A651;
+  --rw-dark: #0d1b1e;
+  --rw-dark-2: #12292e;
+}
+
+body {
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  color: #1b2b2e;
+  background: #f7f9f9;
+}
+
+a { text-decoration: none; }
+
+/* Navbar */
+.navbar-rmw {
+  background: var(--rw-dark);
+}
+.navbar-rmw .navbar-brand {
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: .3px;
+}
+.navbar-rmw .navbar-brand span { color: var(--rw-yellow); }
+.navbar-rmw .nav-link {
+  color: rgba(255,255,255,.85) !important;
+  font-weight: 500;
+}
+.navbar-rmw .nav-link:hover,
+.navbar-rmw .nav-link.active { color: var(--rw-yellow) !important; }
+.navbar-rmw .btn-cta {
+  background: var(--rw-yellow);
+  color: #10222a;
+  font-weight: 700;
+  border-radius: 999px;
+  padding: .45rem 1.4rem;
+}
+.navbar-rmw .btn-cta:hover { filter: brightness(0.95); color: #10222a; }
+
+/* Hero */
+.hero-rmw {
+  position: relative;
+  background:
+    linear-gradient(120deg, rgba(13,27,30,.92) 10%, rgba(13,27,30,.55) 60%, rgba(0,161,222,.35) 100%),
+    url('https://images.unsplash.com/photo-1581093458791-9d0af1b76c85?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+  color: #fff;
+  padding: 7rem 0 6rem;
+}
+.hero-rmw .eyebrow {
+  display: inline-block;
+  background: rgba(250,210,1,.15);
+  border: 1px solid var(--rw-yellow);
+  color: var(--rw-yellow);
+  padding: .3rem 1rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: .85rem;
+  letter-spacing: .5px;
+}
+.hero-rmw h1 { font-weight: 800; font-size: 3rem; line-height: 1.1; }
+.hero-strip {
+  background: var(--rw-dark-2);
+  color: #fff;
+  border-top: 3px solid var(--rw-yellow);
+}
+.hero-strip .stat b { color: var(--rw-yellow); font-size: 1.4rem; display:block; }
+
+/* Sections */
+.section-title { font-weight: 800; color: var(--rw-dark); }
+.section-title .accent { color: var(--rw-green); }
+.eyebrow-mini {
+  color: var(--rw-blue);
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-size: .8rem;
+}
+.stripe-divider {
+  height: 6px;
+  background: linear-gradient(90deg, var(--rw-blue), var(--rw-yellow), var(--rw-green));
+  border: 0;
+  border-radius: 3px;
+}
+
+/* Cards */
+.card-rmw {
+  border: 1px solid #e6ecec;
+  border-radius: 14px;
+  overflow: hidden;
+  transition: transform .15s ease, box-shadow .15s ease;
+  background: #fff;
+}
+.card-rmw:hover { transform: translateY(-4px); box-shadow: 0 12px 24px rgba(0,0,0,.08); }
+.speaker-photo {
+  width: 100%; aspect-ratio: 1/1; object-fit: cover; background:#eef3f3;
+}
+.badge-tier-platinum { background:#e7e7ea; color:#3a3a3f; }
+.badge-tier-gold { background: var(--rw-yellow); color:#5a4600; }
+.badge-tier-silver { background:#dfe6e6; color:#33484a; }
+.badge-tier-partner { background: #d7f2e2; color:#0b6b3d; }
+
+.btn-rmw-primary {
+  background: var(--rw-blue);
+  border-color: var(--rw-blue);
+  color: #fff;
+  font-weight: 700;
+}
+.btn-rmw-primary:hover { background:#0089bd; border-color:#0089bd; color:#fff; }
+.btn-rmw-outline {
+  border: 2px solid var(--rw-yellow);
+  color: var(--rw-dark);
+  font-weight: 700;
+}
+
+.footer-rmw {
+  background: var(--rw-dark);
+  color: rgba(255,255,255,.75);
+}
+.footer-rmw a { color: #fff; }
+.footer-rmw h6 { color: var(--rw-yellow); font-weight: 700; }
+
+.timeline-day {
+  border-left: 3px solid var(--rw-blue);
+  padding-left: 1.25rem;
+}
+.timeline-item {
+  position: relative;
+  padding-bottom: 1.5rem;
+}
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: -1.62rem;
+  top: .35rem;
+  width: 12px; height: 12px;
+  border-radius: 50%;
+  background: var(--rw-yellow);
+  border: 2px solid var(--rw-dark-2);
+}
+.session-type-badge { font-size:.72rem; font-weight:700; letter-spacing:.4px; text-transform:uppercase; }
+
+/* Admin */
+.admin-sidebar { background: var(--rw-dark); min-height: 100vh; color:#fff; }
+.admin-sidebar a { color: rgba(255,255,255,.8); }
+.admin-sidebar a.active, .admin-sidebar a:hover { color: var(--rw-yellow); }
+.admin-topbar { background:#fff; border-bottom:1px solid #e6ecec; }
+.stat-card { border-radius: 14px; border:1px solid #e6ecec; }
+.stat-card b { font-size: 1.6rem; }

@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>@yield('title', 'Rwanda Mining Week 2026') | RMW 2026</title>
+    <meta name="description" content="Rwanda Mining Week 2026 — Extractive Industry for Sustainable Futures. December 9–11, 2026, Kigali Convention Centre.">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="{{ asset('css/site.css') }}" rel="stylesheet">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-rmw py-3 sticky-top">
+    <div class="container">
+        <a class="navbar-brand" href="{{ route('home') }}">RMW<span>2026</span></a>
+        <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#nav"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="nav">
+            <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+                <li class="nav-item"><a class="nav-link {{ request()->routeIs('home') ? 'active' : '' }}" href="{{ route('home') }}">Home</a></li>
+                <li class="nav-item"><a class="nav-link {{ request()->routeIs('about') ? 'active' : '' }}" href="{{ route('about') }}">Theme &amp; About</a></li>
+                <li class="nav-item"><a class="nav-link {{ request()->routeIs('program') ? 'active' : '' }}" href="{{ route('program') }}">Program</a></li>
+                <li class="nav-item"><a class="nav-link {{ request()->routeIs('venue') ? 'active' : '' }}" href="{{ route('venue') }}">Venue</a></li>
+                <li class="nav-item ms-lg-2"><a class="btn btn-cta" href="{{ route('registration.create') }}">Register Now</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+@yield('content')
+
+<footer class="footer-rmw pt-5 pb-4 mt-5">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-md-4">
+                <h5 class="text-white fw-bold">Rwanda Mining Week <span class="text-warning">2026</span></h5>
+                <p class="small">Extractive Industry for Sustainable Futures.<br>December 9–11, 2026 · Kigali Convention Centre, Rwanda.</p>
+            </div>
+            <div class="col-md-2">
+                <h6>Explore</h6>
+                <ul class="list-unstyled small">
+                    <li><a href="{{ route('about') }}">Theme &amp; About</a></li>
+                    <li><a href="{{ route('program') }}">Program</a></li>
+                    <li><a href="{{ route('venue') }}">Venue</a></li>
+                    <li><a href="{{ route('registration.create') }}">Register</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3">
+                <h6>Organized by</h6>
+                <p class="small mb-1">Rwanda Mines, Petroleum and Gas Board (RMB)</p>
+                <p class="small">In partnership with the Rwanda Convention Bureau (RCB)</p>
+            </div>
+            <div class="col-md-3">
+                <h6>Contact</h6>
+                <p class="small mb-1"><i class="bi bi-envelope me-1"></i> info@rwandaminingweek.rw</p>
+                <p class="small mb-1"><i class="bi bi-geo-alt me-1"></i> Kigali Convention Centre, Rwanda</p>
+                <p class="small text-warning-emphasis"><i class="bi bi-info-circle me-1"></i> Demo site — details illustrative.</p>
+            </div>
+        </div>
+        <hr class="border-secondary my-4">
+        <p class="small mb-0 text-center">&copy; {{ date('Y') }} Rwanda Mining Week. Demo build prepared for tender submission RCB/004/6/2026.</p>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
