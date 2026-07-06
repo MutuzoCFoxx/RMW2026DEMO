@@ -110,7 +110,7 @@
                         @foreach($slide as $speaker)
                         <div class="col-6 col-md-3">
                             <div class="card-rmw h-100">
-                                <img src="{{ $speaker->photo_url ?: 'https://ui-avatars.com/api/?background=2BA6DE&color=fff&size=256&name='.urlencode($speaker->name) }}" class="speaker-photo" alt="{{ $speaker->name }}">
+                                <img src="{{ $speaker->photo_url ?: 'https://api.dicebear.com/9.x/avataaars/svg?seed='.urlencode($speaker->name).'&backgroundColor=2BA6DE,16213F,F5821F,3DAE4B' }}" class="speaker-photo" alt="{{ $speaker->name }}">
                                 <div class="p-3">
                                     <h6 class="fw-bold mb-0">{{ $speaker->name }}</h6>
                                     <p class="small text-muted mb-0">{{ $speaker->job_title }}</p>

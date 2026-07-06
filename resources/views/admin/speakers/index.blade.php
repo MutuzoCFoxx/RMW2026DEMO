@@ -15,7 +15,7 @@
             <tbody>
                 @forelse($speakers as $speaker)
                 <tr>
-                    <td><img src="{{ $speaker->photo_url ?: 'https://ui-avatars.com/api/?name='.urlencode($speaker->name) }}" style="width:40px;height:40px;object-fit:cover;border-radius:50%;"></td>
+                    <td><img src="{{ $speaker->photo_url ?: 'https://api.dicebear.com/9.x/avataaars/svg?seed='.urlencode($speaker->name) }}" style="width:40px;height:40px;object-fit:cover;border-radius:50%;"></td>
                     <td class="fw-semibold">{{ $speaker->name }}</td>
                     <td>{{ $speaker->job_title }}</td>
                     <td>{{ $speaker->organization }}</td>
